@@ -1,2 +1,5 @@
 # Ignore build projects.
-SGV_Domain/target
+/MosquiredSGV/SGV_Domain/target/
+/MosquiredSGV/SGV_Persistence/target/
+/MosquiredSGV/SGV_Business/target/
+/MosquiredSGV/SGV_Presentation/target/
