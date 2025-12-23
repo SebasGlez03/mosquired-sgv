@@ -10,6 +10,7 @@ package com.enumerators;
  */
 public enum UserRole {
 
-    ADMIN
+    ADMIN,
+    PERSONNEL
 
 }
