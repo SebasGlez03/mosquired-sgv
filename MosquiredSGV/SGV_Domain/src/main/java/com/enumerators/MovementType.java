@@ -5,13 +5,14 @@
 package com.enumerators;
 
 /**
- * Roles of the user
- * 
+ * Types of movements
  * @author PC
  */
-public enum UserRole {
-
-    ADMIN,
-    PERSONNEL
-
+public enum MovementType {
+    
+    IN,
+    OUT,
+    ADJUST,
+    PRODUCTION
+    
 }

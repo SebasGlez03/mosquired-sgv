@@ -5,13 +5,13 @@
 package com.enumerators;
 
 /**
- * Roles of the user
- * 
+ * Statusses of the payment
  * @author PC
  */
-public enum UserRole {
-
-    ADMIN,
-    PERSONNEL
-
+public enum PaymentStatus {
+    
+    PAID,
+    PARTIAL,
+    PENDING
+    
 }
