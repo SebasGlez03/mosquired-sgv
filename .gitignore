@@ -1,3 +1,5 @@
+# Ignore sensible data from db.
+
 # Ignore build projects.
 /MosquiredSGV/SGV_Domain/target/
 /MosquiredSGV/SGV_Persistence/target/
