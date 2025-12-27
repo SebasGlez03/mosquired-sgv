@@ -12,11 +12,18 @@ import java.util.List;
  * @author PC
  */
 public interface IUserDAO {
- 
-    void create(User user);
-    User find(Integer id);
-    List<User> findAll();
-    void update(User user);
-    void delete(Integer id);
+
+  void create(User user);
+
+  User find(Integer id);
+
+  List<User> findAll();
+
+  void update(User user);
+
+  void delete(Integer id);
+
+  // Specific methods: login
+  User login(String username, String password);
 
 }

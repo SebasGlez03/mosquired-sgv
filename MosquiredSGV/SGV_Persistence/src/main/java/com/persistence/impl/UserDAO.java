@@ -8,6 +8,7 @@ import com.persistence.IUserDAO;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.NoResultException;
 import jakarta.persistence.TypedQuery;
 
 /**
@@ -116,6 +117,29 @@ public class UserDAO implements IUserDAO {
       if (tx.isActive())
         tx.rollback();
       throw e;
+    } finally {
+      em.close();
+    }
+  }
+
+  /**
+   * Login with username and password
+   * 
+   * @param username Username
+   * @param password Password of the user
+   */
+  @Override
+  public User login(String username, String password) {
+    EntityManager em = getEntityManager();
+    try {
+      // NOTE: The password must be compare hashed
+      String jpql = "SELECT u FROM User u WHERE u.username = :user AND u.password = :pass AND u.isActive = true";
+      TypedQuery<User> query = em.createQuery(jpql, User.class);
+      query.setParameter("user", username);
+      query.setParameter("pass", password);
+      return query.getSingleResult();
+    } catch (NoResultException e) {
+      return null;
     } finally {
       em.close();
     }
