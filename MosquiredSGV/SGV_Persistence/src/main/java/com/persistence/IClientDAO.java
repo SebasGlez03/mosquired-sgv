@@ -12,11 +12,17 @@ import java.util.List;
  * @author PC
  */
 public interface IClientDAO {
-   
-    void create(Client client);
-    Client find(Integer id);
-    List<Client> findAll();
-    void update(Client client);
-    void delete(Integer id);
 
+  void create(Client client);
+
+  Client find(Integer id);
+
+  List<Client> findAll();
+
+  void update(Client client);
+
+  void delete(Integer id);
+
+  // Find by name for the finder of sales
+  List<Client> findByName(String name);
 }
