@@ -12,11 +12,18 @@ import java.util.List;
  * @author PC
  */
 public interface IProductDAO {
-   
-    void create(Product product);
-    Product find(Integer id);
-    List<Product> findAll();
-    void update(Product product);
-    void delete(Integer id);
 
+  void create(Product product);
+
+  Product find(Integer id);
+
+  List<Product> findAll();
+
+  void update(Product product);
+
+  void delete(Integer id);
+
+  List<Product> findByName(String name);
+
+  List<Product> findWithLowStock();
 }
