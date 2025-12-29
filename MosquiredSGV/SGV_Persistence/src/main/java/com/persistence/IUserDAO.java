@@ -26,4 +26,6 @@ public interface IUserDAO {
   // Specific methods: login
   User login(String username, String password);
 
+  User findByUsername(String username);
+
 }

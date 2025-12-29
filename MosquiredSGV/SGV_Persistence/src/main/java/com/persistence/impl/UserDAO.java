@@ -145,4 +145,24 @@ public class UserDAO implements IUserDAO {
     }
   }
 
+  /**
+   * Finds a user by its username
+   * 
+   * @param username Username
+   */
+  @Override
+  public User findByUsername(String username) {
+    EntityManager em = getEntityManager();
+    try {
+      String jpql = "SELECT u FROM User u WHERE u.username = :user AND i.isActive = true";
+      TypedQuery<User> query = em.createQuery(jpql, User.class);
+      query.setParameter("user", username);
+      return query.getSingleResult();
+    } catch (NoResultException e) {
+      return null;
+    } finally {
+      em.close();
+    }
+  }
+
 }
