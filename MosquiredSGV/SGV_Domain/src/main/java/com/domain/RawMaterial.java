@@ -17,69 +17,74 @@ import java.math.BigDecimal;
 
 /**
  * Entity for the Raw Material
+ * 
  * @author PC
  */
 @Entity
 @Table(name = "raw_materials")
 public class RawMaterial {
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_material")
-    private Integer idMaterial;
-    
-    @Column(name = "name", nullable = false, length = 100)
-    private String name;
-    
-    @Enumerated(EnumType.STRING)
-    @Column(name = "measurement_unit")
-    private MeasurementUnit measurementUnit;
-    
-    @Column(name = "current_stock", precision = 10, scale = 2)
-    private BigDecimal currentStock;
 
-    public RawMaterial() {
-    }
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "id_material")
+  private Integer idMaterial;
 
-    public RawMaterial(Integer idMaterial, String name, MeasurementUnit measurementUnit, BigDecimal currentStock) {
-        this.idMaterial = idMaterial;
-        this.name = name;
-        this.measurementUnit = measurementUnit;
-        this.currentStock = currentStock;
-    }
+  @Column(name = "name", nullable = false, length = 100)
+  private String name;
 
-    public Integer getIdMaterial() {
-        return idMaterial;
-    }
+  @Enumerated(EnumType.STRING)
+  @Column(name = "measurement_unit")
+  private MeasurementUnit measurementUnit;
 
-    public void setIdMaterial(Integer idMaterial) {
-        this.idMaterial = idMaterial;
-    }
+  @Column(name = "current_stock", precision = 10, scale = 2)
+  private BigDecimal currentStock;
 
-    public String getName() {
-        return name;
-    }
+  public RawMaterial() {
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public RawMaterial(Integer idMaterial, String name, MeasurementUnit measurementUnit, BigDecimal currentStock) {
+    this.idMaterial = idMaterial;
+    this.name = name;
+    this.measurementUnit = measurementUnit;
+    this.currentStock = currentStock;
+  }
 
-    public MeasurementUnit getMeasurementUnit() {
-        return measurementUnit;
-    }
+  public RawMaterial(String name, MeasurementUnit measurementUnit, BigDecimal currentStock) {
+    this.name = name;
+    this.measurementUnit = measurementUnit;
+    this.currentStock = currentStock;
+  }
 
-    public void setMeasurementUnit(MeasurementUnit measurementUnit) {
-        this.measurementUnit = measurementUnit;
-    }
+  public Integer getIdMaterial() {
+    return idMaterial;
+  }
 
-    public BigDecimal getCurrentStock() {
-        return currentStock;
-    }
+  public void setIdMaterial(Integer idMaterial) {
+    this.idMaterial = idMaterial;
+  }
 
-    public void setCurrentStock(BigDecimal currentStock) {
-        this.currentStock = currentStock;
-    }
-    
-    
-    
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public MeasurementUnit getMeasurementUnit() {
+    return measurementUnit;
+  }
+
+  public void setMeasurementUnit(MeasurementUnit measurementUnit) {
+    this.measurementUnit = measurementUnit;
+  }
+
+  public BigDecimal getCurrentStock() {
+    return currentStock;
+  }
+
+  public void setCurrentStock(BigDecimal currentStock) {
+    this.currentStock = currentStock;
+  }
+
 }
