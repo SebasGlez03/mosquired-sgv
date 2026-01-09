@@ -113,8 +113,7 @@ public class SaleBO implements ISaleBO {
    */
   @Override
   public List<SaleDTO> getSalesByClient(Integer clientId) {
-    // TODO Auto-generated method stub
-    return null;
+    return mapListToDTO(saleDAO.findByClient(clientId));
   }
 
   /**
@@ -126,8 +125,7 @@ public class SaleBO implements ISaleBO {
    */
   @Override
   public List<SaleDTO> getSalesByDateRange(LocalDateTime start, LocalDateTime end) {
-    // TODO Auto-generated method stub
-    return null;
+    return mapListToDTO(saleDAO.findByDateRange(start, end));
   }
 
   /**
